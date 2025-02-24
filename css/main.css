@@ -280,6 +280,7 @@ h1 {
     font-size: 1.5rem;
     font-weight: 400;
     letter-spacing: 1px;
+    margin: 0.5rem;
     color: white;
     z-index: 1;
 }
@@ -397,6 +398,7 @@ h1 {
 .grid_container .product_item h2 {
     font-size: 2rem;
     margin-left: 0.5rem;
+    font-weight: 500;
 }
 
 .grid_container .product_item h3 {
@@ -432,10 +434,19 @@ h1 {
     padding: 2rem 1rem;
 }
 
+/* links style */
 .footer_container .links {
     display: flex;
     flex-direction: row;
     color: #ffffff;
+    justify-content: space-around;
+    margin: 0 2rem;
+}
+.footer_container .links .link {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
 }
 
 .footer_container .links h4 {
@@ -445,6 +456,8 @@ h1 {
 }
 
 .footer_container .links ul {
+    display: flex;
+    flex-direction: column;
     list-style: none;
 }
 
@@ -456,14 +469,23 @@ h1 {
     line-height: 2;
 }
 
+/* qr code hidden */
+.qr_code {
+    display: none;
+}
+
+/* social meida style */
 .footer_container .social_media {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 1rem;
     color: #ffffffac;
+    padding: 1rem 0 0 0;
 }
-
+.footer_container .social_media svg{
+    width: 1.5rem;  
+}
 .footer_container hr {
     border: none;
     background-color: #ffffff2f;
@@ -554,6 +576,24 @@ h1 {
     .grid_container .item_12 {
         grid-column: 9 / span 4;
         grid-row: 4 / span 1;
+    }
+     /* display qr code */
+     .qr_code {
+        display: block;
+    }
+
+    .footer_container .links{
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        margin: 0 2rem;
+    }
+    .footer_container .links .qr_code img {
+        width: 102px;
+        padding: 1.5rem;
+    }
+    .footer_container .social_media svg{
+        width: 1.8rem;  
     }
 }
 
@@ -659,6 +699,10 @@ h1 {
         grid-row: 1 / span 1;
     }
 
+    .services_container .grid_container .card p {
+        font-size: 1.8rem;
+        
+    }
     /* shopping products */
     .grid_container {
         display: grid;
@@ -712,5 +756,36 @@ h1 {
     .grid_container .item_12 {
         grid-column: 10 / span 3;
         grid-row: 3 / span 1;
+    }
+    /* display qr code */
+    .qr_code {
+        display: block;
+    }
+    .footer_container .links{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 4rem;
+        margin: 0 8rem;
+    }
+    .footer_container .links .qr_code img {
+        width: 102px;
+        padding: 1.5rem;
+    }
+    .footer_container .links h4 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        opacity: 0.85;
+    }
+    
+    .footer_container .links ul li a {
+        font-size: 1rem; 
+    }
+    .footer_container p {
+        font-size: 1rem; 
+        opacity: 0.85;
+    }
+    .footer_container .social_media svg{
+        width: 1.8rem;  
     }
 }
