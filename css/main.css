@@ -35,15 +35,20 @@ p {
 /* header layout */
 .header {
     max-width: 100%;
-    height: 72px;
+    height: 84px;
     flex-shrink: 0;
     background-color: var(--primary-1);
+}
+.banner_container {
+    background-color: #FBF9EF;
+}
+
+.nav_content {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
-
 .nav_items {
     display: none;
 }
@@ -79,27 +84,25 @@ p {
 }
 
 /* banner style & layout */
-.banner {
-    background-color: #FBF9EF;
-    width: 100%;
-    height: auto;
+.banner_container {
     display: flex;
     flex-direction: column-reverse;
-
 }
 
-.banner .image_container {
+.banner_container .image_container {
     width: 100%;
-    height: 360px;
+    height: 100%;
+    max-height: 560px;
     overflow: hidden;
 }
 
-.banner img {
+.banner_container img,
+.banner_container source {
     background-color: #FBF9EF;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: bottom;
+    object-position: right;
     flex-shrink: 0;
 }
 
@@ -133,7 +136,7 @@ p {
     bottom: 0px;
     width: 100%;
     height: 100%;
-    background-image: url(./images/highlight_circle_1.svg);
+    background-image: url(/images/highlight_circle_1.svg);
     background-repeat: no-repeat;
 }
 
@@ -148,7 +151,7 @@ p {
     bottom: -40px;
     width: 200%;
     height: 200%;
-    background-image: url(./images/highlight_circle_2.svg);
+    background-image: url(/images/highlight_circle_2.svg);
     background-repeat: no-repeat;
 }
 
@@ -164,7 +167,7 @@ p {
     bottom: -12px;
     width: 100%;
     height: 12px;
-    background-image: url(./images/highlight_uncerline_1.svg);
+    background-image: url(/images/highlight_uncerline_1.svg);
     background-repeat: no-repeat;
 }
 
@@ -180,21 +183,26 @@ p {
     bottom: -8px;
     width: 100%;
     height: 10px;
-    background-image: url(./images/highlight_uncerline_2.svg);
+    background-image: url(/images/highlight_uncerline_2.svg);
     background-repeat: no-repeat;
 }
 
 /* header button style */
 .button {
-    margin-top: 2rem;
+    margin-top: 4rem;
     background-color: var(--primary-1);
     width: 12rem;
-    height: 3rem;
-    border-radius: 1.5rem;
+    height: 4rem;
+    border-radius: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease-in-out;
+}
+.button:hover {
+    background-color: #0c8a56;
+    cursor: pointer;
 }
 
 .button a {
@@ -209,10 +217,6 @@ p {
 
 /* featured service */
 /* text style */
-.services_container {
-    margin: auto 0rem;
-}
-
 h1 {
     font-family: "Roboto Condensed";
     ;
@@ -311,6 +315,10 @@ h1 {
 
 .services_container .grid_container .card a {
     display: none;
+    transition: all 0.5s ease-in-out;
+}
+.services_container .grid_container .card a:hover {
+    background-color: #FFF;
 }
 
 /* shopping & products layout */
@@ -412,7 +420,8 @@ h1 {
 
 .grid_container .product_item img {
     width: 100%;
-    height: 176px;
+    height: 100%;
+    max-height: 320px;
     object-fit: cover;
     border-radius: 0.5rem 0.5rem 0 0;
 }
@@ -443,13 +452,13 @@ h1 {
 
 .grid_container .product_item button {
     background: none;
+    color: var(--primary-1);
     border: none;
     cursor: pointer;
     padding-right: 0.5rem;
 }
 
 /* contact style */
-
 /* contact us */
 /* contact layout */
 .contact_grid_container {
@@ -1013,10 +1022,14 @@ h1 {
 /* desktop screen */
 @media screen and (min-width: 960px) {
 
-    /* header_right layout */
-    .header {
-        height: 84px;
-        display: flex;
+    .nav_content,
+    .banner,
+    .services_container,
+    .shopping_container ,
+    .main_info,
+    .main_contact {
+        max-width: 1440px;
+        margin: 0 auto;
     }
 
     .header_right {
@@ -1025,7 +1038,6 @@ h1 {
         align-items: center;
         gap: 1rem;
         margin-left: auto;
-        margin-right: 1rem;
     }
 
     /* menu hidden */
@@ -1067,7 +1079,7 @@ h1 {
     }
 
     /* banner style */
-    .banner {
+    .banner_container {
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;
@@ -1077,6 +1089,8 @@ h1 {
         grid-column: 2 / span 1;
         width: 100%;
         height: auto;
+        max-height: 640px;
+        object-fit: contain;
     }
 
     .banner .slogon_container {
@@ -1092,6 +1106,10 @@ h1 {
         margin-top: 3rem;
     }
 
+    /* service layout */
+     .grid_container {
+        padding: 0 1rem;
+    }
      /* services items */
      .services_container .grid_container .card_recipe {
         grid-column: 1 / span 2;
