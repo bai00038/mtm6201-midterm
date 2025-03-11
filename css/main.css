@@ -10,6 +10,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f5f5f5;
+    overflow-x: hidden;
 }
 
 .skip_links {
@@ -755,6 +756,7 @@ h1 {
 .footer_container {
     background-color: var(--primary-3);
     display: flex;
+    align-items: center;
     flex-direction: column;
     padding: 2rem 1rem;
 }
@@ -776,7 +778,7 @@ h1 {
 }
 
 .footer_container .links h4 {
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 500;
     letter-spacing: 1px;
 }
