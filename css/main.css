@@ -659,7 +659,7 @@ h1 {
     max-width: 100%;
     display: flex;
     justify-content: center;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 1 / 1.1;
 }
 
 .video_container iframe {
@@ -778,7 +778,7 @@ h1 {
 }
 
 .footer_container .links h4 {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
     font-weight: 500;
     letter-spacing: 1px;
 }
@@ -792,7 +792,7 @@ h1 {
 .footer_container .links ul li a {
     text-decoration: none;
     color: #ffffffac;
-    font-size: 0.8rem;
+    font-size: 1rem;
     letter-spacing: 1px;
     line-height: 2;
 }
@@ -992,107 +992,108 @@ h1 {
         border: none;
         border-radius: 0.5rem;
     }
-}
+    .about_container .text_content {
+        grid-area: text;
+    }
+    
+    .about_container h1 {
+        text-align: left;
+    }
+    
+    .about_container picture:nth-of-type(1) {
+        grid-area: img1;
+        width: 236px;
+    }
+    
+    .about_container picture:nth-of-type(2) {
+        grid-area: img2;
+        width: 236px;
+    }
+    
+    .about_container picture:nth-of-type(3) {
+        grid-area: img3;
+        width: 236px;
+    }
+    
+    /* about part 2 layout */
+    .organic {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto;
+        gap: 1rem;
+        grid-template-areas:
+            "text text video ."
+            "text text video img1"
+            ". . img3 img1"
+            ". img2 img3 ."
+            ". img2 . .";
+    }
+    
+    .about_container .video_container {
+        grid-area: video;
+        width: 236px;
+        max-height: 198px;
+        height: 100%;
+        aspect-ratio: 16 / 9;
+    }
+    
+    .about_container .video_container iframe {
+        border-radius: 0.5rem;
+    }
+    
+    .about_container .text_content {
+        grid-area: text;
+    }
+    
+    .about_container img:nth-of-type(1) {
+        grid-area: img1;
+        width: 236px;
+    }
+    
+    .about_container img:nth-of-type(2) {
+        grid-area: img2;
+        width: 236px;
+    }
+    
+    .about_container img:nth-of-type(3) {
+        grid-area: img3;
+        width: 236px;
+    }
+    
+    /* footer sytle */
+    .footer_container .links {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 4rem;
+        margin: 0 8rem;
+    }
+    
+    .footer_container .links .qr_code img {
+        width: 102px;
+        padding: 1.5rem;
+    }
+    
+    .footer_container .links h4 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        opacity: 0.85;
+    }
+    
+    .footer_container .links ul li a {
+        font-size: 1rem;
+    }
+    
+    .footer_container p {
+        font-size: 1rem;
+        opacity: 0.85;
+    }
+    
+    .footer_container .social_media svg {
+        width: 1.8rem;
+    }
+    }
 
-.about_container .text_content {
-    grid-area: text;
-}
-
-.about_container h1 {
-    text-align: left;
-}
-
-.about_container picture:nth-of-type(1) {
-    grid-area: img1;
-    width: 236px;
-}
-
-.about_container picture:nth-of-type(2) {
-    grid-area: img2;
-    width: 236px;
-}
-
-.about_container picture:nth-of-type(3) {
-    grid-area: img3;
-    width: 236px;
-}
-
-/* about part 2 layout */
-.organic {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-    gap: 1rem;
-    grid-template-areas:
-        "text text video ."
-        "text text video img1"
-        ". . img3 img1"
-        ". img2 img3 ."
-        ". img2 . .";
-}
-
-.about_container .video_container {
-    grid-area: video;
-    width: 236px;
-    max-height: 320px;
-    height: 100%;
-}
-
-.about_container .video_container iframe {
-    border-radius: 0.5rem;
-}
-
-.about_container .text_content {
-    grid-area: text;
-}
-
-.about_container img:nth-of-type(1) {
-    grid-area: img1;
-    width: 236px;
-}
-
-.about_container img:nth-of-type(2) {
-    grid-area: img2;
-    width: 236px;
-}
-
-.about_container img:nth-of-type(3) {
-    grid-area: img3;
-    width: 236px;
-}
-
-/* footer sytle */
-.footer_container .links {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 4rem;
-    margin: 0 8rem;
-}
-
-.footer_container .links .qr_code img {
-    width: 102px;
-    padding: 1.5rem;
-}
-
-.footer_container .links h4 {
-    font-size: 1.2rem;
-    font-weight: 400;
-    opacity: 0.85;
-}
-
-.footer_container .links ul li a {
-    font-size: 1rem;
-}
-
-.footer_container p {
-    font-size: 1rem;
-    opacity: 0.85;
-}
-
-.footer_container .social_media svg {
-    width: 1.8rem;
-}
 
 /* desktop screen */
 @media screen and (min-width: 960px) {
